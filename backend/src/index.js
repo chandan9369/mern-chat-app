@@ -31,16 +31,19 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-// Default route
-app.get("/", (req, res) => {
-   res.send("Hii");
-});
-
 if (process.env.NODE_ENV === "production") {
-   app.use(express.static(path.join(__dirname, "../frontend/dist")));
+   const frontendDist = path.resolve("../frontend/dist");
 
-   app.get(/(.*)/, (req, res) => {
-      res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+   // Serve static files
+   app.use(express.static(frontendDist));
+
+   // Serve index.html for all non-API routes
+   app.get("*", (req, res) => {
+      // Ignore API routes
+      if (req.path.startsWith("/api/")) {
+         return res.status(404).send("API route not found");
+      }
+      res.sendFile(path.join(frontendDist, "index.html"));
    });
 }
 
