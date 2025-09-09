@@ -78,7 +78,7 @@ It allows users to chat instantly with friends, manage their profiles, and perso
 
 ```bash
 git clone https://github.com/chandan9369/mern-chat-app.git
-cd chatterbox
+cd mern-chat-app
 ```
 
 ### 2️⃣ Setup
