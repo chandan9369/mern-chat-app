@@ -3,6 +3,8 @@
 ChatterBox is a fullstack **`MERN` (MongoDB, Express, React, Node.js)** real-time chat application with authentication, profile management, theme customization, and online/offline status tracking.  
 It allows users to chat instantly with friends, manage their profiles, and personalize their experience with multiple color themes.
 
+**`App Link:`** https://mern-chat-app-1-es4j.onrender.com/login
+
 ---
 
 ## 🚀 Features
