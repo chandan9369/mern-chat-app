@@ -88,7 +88,7 @@ if (process.env.NODE_ENV === "production") {
    app.use(express.static(frontendDist));
 
    // Serve index.html for all non-API routes
-   app.get(/(*)/, (req, res) => {
+   app.get(/(.*)/, (req, res) => {
       if (req.path.startsWith("/api/")) {
          return res.status(404).send("API route not found");
       }
